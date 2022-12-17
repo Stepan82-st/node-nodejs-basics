@@ -12,7 +12,7 @@ if(await exists(copyFolderUrl) || !(await exists(originalFolderUrl))){
 } else {
     const [files] = await Promise.all([readdir(originalFolderUrl),mkdir(copyFolderUrl)]);
     const promises = files.map((fileName) => 
-    copyFile(getAbsUrl(`$(FILES_PATH)/$(fileName)`), getAbsUrl(`$(COPY_FOLDER_PATH)/$(fileName)`)))
+    copyFile(getAbsUrl(`${FILES_PATH}/${fileName}`), getAbsUrl(`${COPY_FOLDER_PATH}/${fileName}`)))
     await Promise.all(promises);
 } // Write your code here 
 };
